@@ -3,7 +3,7 @@ data modify storage dlm: data[0].Chunks[].alive set value false
 data modify storage dlm: data[0].Chunks[{tickets:[{valid:true}]}].alive set value true
 
 data modify storage dlm: gc set value []
-data modify storage dlm: gc append from storage dlm: data[].Chunks[{alive:false}]
+data modify storage dlm: gc append from storage dlm: data[0].Chunks[{alive:false}]
 
 data remove storage dlm: data[0].Chunks[{alive:false}]
 
