@@ -14,7 +14,7 @@ Users can create **tickets** to load a chunk or a rectangular area of chunks in 
 
 Minecraft handles `forceload` asynchronously, which means a chunk is not immediately available after `forceload`. Leopard Cat allows you to specify a list of `on_load` commands that will be executed after the target chunk(s) are fully loaded.
 
-A ticket can also spcify how long it should last.
+A ticket can also specify how long it should last.
 
 ## How to Use
 
@@ -27,7 +27,7 @@ To create a ticket, first write parameters into storage `dlm:` under key `ticket
 `on_load`: *(#[command] string | [#[command] string])*,   A string of command or a list of commands. Executed by the server right after the chunks are all fully loaded\
 `life`: *struct* {   Specify how long this ticket should last.
  -    `type`: *(`"indefinite"`|`"temp"`|`"wait"`)*,    `indefinite`: Never close ticket unless instructed to do so; `temp`: Close this ticket immediately after `on_load` commands; `wait`: Close this ticket after `time` amount of ticks
- -    `time`: *int*,    For `type:wait` only. Spcecifies the number of ticks to wait before auto-removal.\
+ -    `time`: *int*,    For `type:wait` only. Specifies the number of ticks to wait before auto-removal.\
 }
 
 Then, execute `function dlm:new_ticket` to create the ticket. Additionally, `dlm:macro_ticket` can be used by inserting the above structure inside the `ticket` macro parameter; `dlm:temp_ticket_here` can be used by only providing `on_load` and a anonymous temp ticket at the context position will be created.
