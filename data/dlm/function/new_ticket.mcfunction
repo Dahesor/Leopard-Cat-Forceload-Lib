@@ -7,7 +7,7 @@ data modify storage dlm: n_t set value {}
 scoreboard players set ERROR_CODE dlm__ 1
 
 #ID handler
-execute unless data storage dlm: ticket.id run return fail
+execute unless data storage dlm: ticket.id run function dlm:zzz/input/new_id
 data modify storage dlm: n_t.id set from storage dlm: ticket.id
 
 #pos handler
