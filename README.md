@@ -20,7 +20,7 @@ A ticket can also specify how long it should last.
 
 To create a ticket, first write parameters into storage `dlm:` under key `ticket`. Fields:
 
-`id`: *string*,   An unique identifier. Do not use special characters.\
+`id`: *string*,   An unique identifier. Do not use special characters. If not included, an anonymous ticket will be created. Do not create indefinite anonymous ticks or that chunk would leak and never unload.\
 `pos`: *Position*,   Specify any block pos in the target chunk. Can be either an object `{x:<z>,z:<z>}`, or a list of length 2 `[x, z]` or length 3 `[x, y, z]` (y will be ignored). If `pos` is omitted then the execution context will be used.\
 `to`: *Position*,  Same as `pos`. If present, select the rectangular area formed to load multiple chunks.\
 `dimension`: *#[id="dimension"] string,*   Dimension of this ticket. If omitted and the command context is in the 3 vanilla dimensions then it will be deduced automatically.\
@@ -36,13 +36,13 @@ To close a ticket, use `function dlm:close_ticket {id:"<id>"}`
 
 ### API
 
-- **`function dlm:api/extende_ticket {time:<time>,id:"<id>"}`**
+- **`function dlm:api/extend_ticket {time:<time>,id:"<id>"}`**
 
 Extend a life:`{type:"wait"}` ticket by the macro input\
 `time`: the new time this ticket should last, in ticks, counted from the moment this function is called\
 `id`: Id of the ticket to extend, must be a ticket of type "wait"
 
-- **`function dlm:api/persevere_this_ticket`**
+- **`function dlm:api/preserve_this_tick`**
 
 Callable only during on_load. If the ticket is of `life:{type:"temp"}`, persevere this ticket and do not unload the chunk
 
