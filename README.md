@@ -52,7 +52,7 @@ Run garbage collection manually. Unload chunks that do not have a ticket. This w
 
 ## Dependency
 
-A Leopard_Cat_Dependency folder is included in the repository. This can be used as spyglass dependency file for the spyglass data pack helper extension to procide hints about Leopard Cat's public interfaces.
+A Leopard_Cat_Dependency folder is included in the repository. This can be used as spyglass dependency file for the spyglass data pack helper extension to provide hints about Leopard Cat's public interfaces.
 
 Put this folder (or zip it) anywhere on your computer, then by creating a `spyglass.json` file at the root of your workspace, the Spyglass extension will provides you the completion and error checking of all the functions and storages you need to write to use this library.
 
