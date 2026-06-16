@@ -1,12 +1,10 @@
 {
     "env": {
-        "gameVersion": "26.1",
+        "gameVersion": "26.2",
         "dependencies": [
             "@vanilla-datapack",
             "@vanilla-resourcepack",
-            "@vanilla-mcdoc",
-            "file:///C:/Users/dahes/Documents/.minecraft/versions/Survival%20Competiton/resourcepacks/Survival%20Competition%20Resources"
-        ],
-        "permissionLevel": 4
+            "@vanilla-mcdoc"
+        ]
     }
 }
